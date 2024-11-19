@@ -20,4 +20,6 @@ SOBOL sensitivity analysis
 ![figure_sobol_analysis](figure_sobol_analysis/Excititory_summary_plot.png)
 Model v RNA seq
 ![figure_sobol_analysis](figure_model_v_rna_seq/inh_scatter_w_lines_plots_HCN1_HCN2_HCN3_vs_gbar_Ih_somatic_gbar_Ih_basal.png)
-
+Model v RNA seq
+![figure_sobol_analysis](figure_UMAP_parameters/exc_umap_para.png)
+![figure_sobol_analysis](figure_UMAP_parameters/inh_umap_para.png)
