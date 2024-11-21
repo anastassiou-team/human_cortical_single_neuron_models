@@ -23,3 +23,8 @@ Model v RNA seq
 Model v RNA seq
 ![figure_sobol_analysis](figure_UMAP_parameters/exc_umap_para.png)
 ![figure_sobol_analysis](figure_UMAP_parameters/inh_umap_para.png)
+model vs experiment, ephys features
+![figure_sobol_analysis](figure_UMAP_ephys_features/umap_feature_exc.png)
+![figure_sobol_analysis](figure_UMAP_ephys_features/umap_feature_inh.png)
+
+
