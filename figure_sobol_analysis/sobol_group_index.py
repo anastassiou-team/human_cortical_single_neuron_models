@@ -108,7 +108,7 @@ for pp in range(len(titles)):
 
     # Plot the subset
     plt.figure()
-    plt.imshow(np.log(sobol_table_subset), vmin=-5.5, vmax=-0.5, aspect='auto')
+    plt.imshow(np.log10(sobol_table_subset), vmin=-2.5, vmax=-0.2, aspect='auto')
     plt.title(titles[pp], fontsize=22)
 
     # Define the ticks to match the subset

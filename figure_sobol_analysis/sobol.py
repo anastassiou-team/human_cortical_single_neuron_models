@@ -63,14 +63,14 @@ for ii in range(len(prefix)):
         sobol_table_per_cell = np.array(sobol_table_per_cell)
         # plt.subplot(10, 10, jj + 1)
         # print(sobol_table_per_cell)
-        # plt.imshow(np.log(sobol_table_per_cell), vmin=-5.5, vmax=-0.5, aspect='auto')
+        # plt.imshow(np.log10(sobol_table_per_cell), vmin=-5.5, vmax=-0.5, aspect='auto')
     
         sobol_table_per_celltype.append(sobol_table_per_cell)
     
     sobol_table_per_celltype = np.mean(np.stack(sobol_table_per_celltype, axis=2), axis=2)
     
     plt.figure()
-    plt.imshow(np.log(sobol_table_per_celltype), vmin=-5.5, vmax=-0.5, aspect='auto')
+    plt.imshow(np.log10(sobol_table_per_celltype), vmin=-2.5, vmax=-0.2, aspect='auto')
     plt.title(prefix[ii])
     
     # Set x and y ticks

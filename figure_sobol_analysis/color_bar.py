@@ -109,8 +109,8 @@ for pp in range(len(titles)):
     # --- MAIN FIGURE (with data) ---
     fig, ax = plt.subplots()
     im = ax.imshow(
-        np.log(sobol_table_subset), 
-        vmin=-5.5, vmax=-0.5, 
+        np.log10(sobol_table_subset), 
+        vmin=-2.5, vmax=-0.2, 
         aspect='auto'
     )
     ax.set_title(titles[pp], fontsize=14)
@@ -135,7 +135,7 @@ for pp in range(len(titles)):
     fig_cb, ax_cb = plt.subplots(figsize=(0.4, 3))  # narrower figure for color bar
     cbar = fig_cb.colorbar(im, cax=ax_cb)
     cbar.ax.tick_params(labelsize=10)
-    cbar.set_label("log(Sobol Index)", fontsize=12)
+    cbar.set_label("log10(Sobol Index)", fontsize=12)
 
     # Save color bar figure
     plt.savefig(f"{titles[pp]}_colorbar_only.png", 
