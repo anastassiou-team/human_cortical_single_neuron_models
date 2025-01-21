@@ -34,6 +34,25 @@ ephys_exp = pd.read_csv(os.path.join(main_dir,'ephys_exp_features.csv'), index_c
 inh_ephys_sim = pd.read_csv(os.path.join(main_dir,'inh_ephys_sim_features.csv'), index_col=False)
 exc_ephys_sim = pd.read_csv(os.path.join(main_dir,'exc_ephys_sim_features.csv'), index_col=False)
 
+#%% Get Top 10 models per cell
+
+def get_topmodels(ephys_sim,n=10):
+    
+    output = pd.DataFrame()
+    
+    cell_ids = ephys_sim['cell_id'].unique()   
+    for cell_id in cell_ids:
+        temp = ephys_sim[ephys_sim['cell_id'] == cell_id]
+        temp = temp.sort_values(by='hof',ascending=True) #sort dataframe from lowest hof number to highest
+        output = pd.concat([output,temp.iloc[:n,:]]) #keep n top hof models per cell_id
+        
+    output = output.reset_index(drop=True)
+    
+    return output
+
+inh_ephys_sim = get_topmodels(inh_ephys_sim,n=10)
+exc_ephys_sim = get_topmodels(exc_ephys_sim,n=10)
+
 #%% Preprocessing
 
 #Drop non-firing cells
@@ -90,7 +109,7 @@ exc_ephys_sim_features = get_zscore(exc_ephys_sim_features)
 
 #%% Generate Mapping
 
-n_neighbors = 200 
+n_neighbors = 20 
 min_dist = 0.2
 random_state = 42
 
@@ -157,5 +176,3 @@ plot_umap(exc_sim_embedding,exc_ephys_sim, title='', s = 100, save_name = 'umap_
 #Plot Excitatory cells, Experiment
 plot_umap(exc_exp_embedding,exc_ephys_exp, title='', s = 100, save_name = 'umap_feature_exc_exp', ax = None, fontsize = 24,
               alpha_val = 0.8, colors = exc_colors, classes = exc_celltype_list)
-
-
