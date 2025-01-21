@@ -163,7 +163,7 @@ def plot_umap(embedding_df,labels_df, title='', s = 100, save_name = None, ax = 
 
 #Plot Inhibitory cells, Simulation
 plot_umap(inh_sim_embedding,inh_ephys_sim, title='', s = 100, save_name = 'umap_feature_inh_sim', ax = None, fontsize = 24,
-              alpha_val = 0.5, colors = inh_colors, classes = inh_celltype_list)
+              alpha_val = 0.8, colors = inh_colors, classes = inh_celltype_list)
 
 #Plot Inhibitory cells, Experiment
 plot_umap(inh_exp_embedding,inh_ephys_exp, title='', s = 100, save_name = 'umap_feature_inh_exp', ax = None, fontsize = 24,
@@ -171,7 +171,7 @@ plot_umap(inh_exp_embedding,inh_ephys_exp, title='', s = 100, save_name = 'umap_
 
 #Plot Excitatory cells, Simulation
 plot_umap(exc_sim_embedding,exc_ephys_sim, title='', s = 100, save_name = 'umap_feature_exc_sim', ax = None, fontsize = 24,
-              alpha_val = 0.5, colors = exc_colors, classes = exc_celltype_list)
+              alpha_val = 0.8, colors = exc_colors, classes = exc_celltype_list)
 
 #Plot Excitatory cells, Experiment
 plot_umap(exc_exp_embedding,exc_ephys_exp, title='', s = 100, save_name = 'umap_feature_exc_exp', ax = None, fontsize = 24,
